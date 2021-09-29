@@ -90,7 +90,7 @@ def _isflattenable(iterable):
 # 
 #         argv = sys.argv
 #         sys.argv = [ full_path ]
-#         sys.argv._extend(args)
+#         sys.argv.extend(args)
 # 
 #         if _globals is None:
 #             _globals = dict(inspect.getmembers(
@@ -146,7 +146,7 @@ def execfile(filename, _globals=None, args=[]):
 
     argv = sys.argv
     sys.argv = [ full_path ]
-    sys.argv._extend(args)
+    sys.argv.extend(args)
 
     if _globals is None:
         _globals = dict(inspect.getmembers(
@@ -272,6 +272,7 @@ def _import(import_stmt, default_cmd='import', global_depth=0):
     name            ::= identifier
 
     TODO: relative_modules or just things with '.' in them
+          (though this generally seems to work, though not exhaustively tested)
           see: https://docs.python.org/3/tutorial/modules.html#packages
     """
     debug = 1
