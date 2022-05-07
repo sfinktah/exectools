@@ -17,5 +17,8 @@ echo "Install at:"
 echo "python -m pip install -i https://test.pypi.org/simple/ exectools==$version"
 sleep 15
 # python -m pip install --upgrade --index-url https://test.pypi.org/simple/ exectools
+echo "Updating cygwin pip"
 python -m pip install -i https://test.pypi.org/simple/ exectools==$version
+# echo 'call "c:\Program Files (x86)\Microsoft Visual Studio\2017\Community\vc\Auxiliary\Build\vcvarsall.bat" x64' $'\n' "$@" | cmd 
+echo "Updating windows pip"
 cmd /c "python -m pip install -i https://test.pypi.org/simple/ exectools==$version"
